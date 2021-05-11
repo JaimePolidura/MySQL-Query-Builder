@@ -8,10 +8,10 @@ public final class SelectTest {
     public void testSelect1 () {
         String query = Select.from("jugadores")
                 .where("dinero").equal(10)
-                .and("nombre").equal("JaimeTruman")
+                .and("nombre").equal("jaimetruman")
                 .build();
 
-        Assert.assertEquals(query, "SELECT * FROM jugadores WHERE dinero = 10 AND nombre = 'JaimeTruman' ");
+        Assert.assertEquals(query, "SELECT * FROM jugadores WHERE dinero = 10 AND nombre = 'jaimetruman' ");
     }
 
     @Test
