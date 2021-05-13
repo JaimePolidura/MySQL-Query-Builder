@@ -1,4 +1,4 @@
-package es.jaimetruman.delete.update;
+package es.jaimetruman.update;
 
 import es.jaimetruman.Utils;
 

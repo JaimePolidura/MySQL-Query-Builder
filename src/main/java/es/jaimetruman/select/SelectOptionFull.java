@@ -1,9 +1,9 @@
-package es.jaimetruman.delete.select.options;
+package es.jaimetruman.select;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.delete.select.Select;
+import es.jaimetruman.CanBuildQuery;
 
-public final class SelectOptionFull extends Select {
+public final class SelectOptionFull extends Select implements CanBuildQuery {
     private final StringBuilder builder;
 
     public SelectOptionFull(String query, String... toAppend) {
@@ -20,12 +20,13 @@ public final class SelectOptionFull extends Select {
         return new SelectOptionCompare(build(), "OR ", value, " ");
     }
 
-    public String build () {
+    @Override
+    public String build() {
         return builder.toString();
     }
 
     @Override
-    public String toString () {
-        return this.builder.toString();
+    public String toString() {
+        return builder.toString();
     }
 }

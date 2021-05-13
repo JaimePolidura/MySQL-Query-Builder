@@ -1,6 +1,5 @@
 package es.jaimetruman.update;
 
-import es.jaimetruman.delete.update.Update;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,13 +1,12 @@
-package es.jaimetruman.delete.insert.options;
+package es.jaimetruman.insert;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.delete.insert.Insert;
+import es.jaimetruman.CanBuildQuery;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
-public final class InsertOptionFinal extends Insert {
+public final class InsertOptionFinal extends Insert implements CanBuildQuery {
     private final StringBuilder builder;
 
     public InsertOptionFinal (StringBuilder builder) {
@@ -22,5 +21,15 @@ public final class InsertOptionFinal extends Insert {
                 .append(")");
 
         return builder.toString();
+    }
+
+    @Override
+    public String build() {
+        return builder.toString();
+    }
+
+    @Override
+    public String toString () {
+        return this.builder.toString();
     }
 }

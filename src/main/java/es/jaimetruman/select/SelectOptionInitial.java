@@ -1,10 +1,9 @@
-package es.jaimetruman.delete.select.options;
+package es.jaimetruman.select;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.delete.select.Order;
-import es.jaimetruman.delete.select.Select;
+import es.jaimetruman.CanBuildQuery;
 
-public class SelectOptionInitial extends Select {
+public class SelectOptionInitial extends Select implements CanBuildQuery {
     private final StringBuilder builder;
 
     public SelectOptionInitial(String... toAppend) {
@@ -35,6 +34,7 @@ public class SelectOptionInitial extends Select {
         return new SelectOptionInitial(build(), "LIMIT ", String.valueOf(limit), " ");
     }
 
+    @Override
     public String build() {
         return builder.toString();
     }

@@ -1,9 +1,10 @@
-package es.jaimetruman.delete.update;
+package es.jaimetruman.update;
 
 
 import es.jaimetruman.Utils;
+import es.jaimetruman.CanBuildQuery;
 
-public final class UpdateOptionFull2 extends Update{
+public final class UpdateOptionFull2 extends Update implements CanBuildQuery {
     private final StringBuilder builder;
 
     public UpdateOptionFull2(StringBuilder builder, String... toAppend) {
@@ -20,7 +21,13 @@ public final class UpdateOptionFull2 extends Update{
         return new UpdateOptionCompare(builder, "OR ", value);
     }
 
+    @Override
     public String build () {
         return builder.toString();
+    }
+
+    @Override
+    public String toString () {
+        return this.builder.toString();
     }
 }

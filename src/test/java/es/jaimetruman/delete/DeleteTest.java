@@ -1,6 +1,5 @@
 package es.jaimetruman.delete;
 
-import es.jaimetruman.delete.delete.Delete;
 import org.junit.Assert;
 import org.junit.Test;
 

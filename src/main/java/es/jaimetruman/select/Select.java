@@ -1,8 +1,8 @@
-package es.jaimetruman.delete.select;
+package es.jaimetruman.select;
 
-import es.jaimetruman.delete.select.options.SelectOptionInitial;
+import es.jaimetruman.ReadQuery;
 
-public abstract class Select {
+public abstract class Select implements ReadQuery {
     public static SelectOptionInitial from (String table) {
         return new SelectOptionInitial("SELECT * FROM ", table, " ");
     }

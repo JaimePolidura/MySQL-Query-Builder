@@ -1,4 +1,4 @@
-package es.jaimetruman.delete.select;
+package es.jaimetruman.select;
 
 public enum Order {
     ASC,

@@ -1,7 +1,7 @@
-package es.jaimetruman.delete.delete;
+package es.jaimetruman.delete;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.delete.update.UpdateOptionFull2;
+import es.jaimetruman.update.UpdateOptionFull2;
 
 import static es.jaimetruman.Utils.formatValue;
 

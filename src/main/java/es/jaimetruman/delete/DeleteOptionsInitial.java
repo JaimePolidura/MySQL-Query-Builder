@@ -1,6 +1,8 @@
-package es.jaimetruman.delete.delete;
+package es.jaimetruman.delete;
 
-public final class DeleteOptionsInitial extends Delete {
+import es.jaimetruman.CanBuildQuery;
+
+public final class DeleteOptionsInitial extends Delete implements CanBuildQuery {
     private final StringBuilder builder;
 
     public DeleteOptionsInitial (String table) {
@@ -13,6 +15,7 @@ public final class DeleteOptionsInitial extends Delete {
         return new DeleteOptionsCompare(builder, "WHERE ", field, " ");
     }
 
+    @Override
     public String build () {
         return builder.toString();
     }

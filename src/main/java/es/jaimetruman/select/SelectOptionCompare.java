@@ -1,7 +1,6 @@
-package es.jaimetruman.delete.select.options;
+package es.jaimetruman.select;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.delete.select.Select;
 
 import static es.jaimetruman.Utils.formatValue;
 

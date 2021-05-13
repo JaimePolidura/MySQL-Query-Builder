@@ -1,6 +1,4 @@
-package es.jaimetruman.delete.insert.options;
-
-import es.jaimetruman.delete.insert.Insert;
+package es.jaimetruman.insert;
 
 
 public final class InsertOptionInitial extends Insert {

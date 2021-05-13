@@ -1,7 +1,5 @@
 package es.jaimetruman.select;
 
-import es.jaimetruman.delete.select.Order;
-import es.jaimetruman.delete.select.Select;
 import org.junit.Assert;
 import org.junit.Test;
 

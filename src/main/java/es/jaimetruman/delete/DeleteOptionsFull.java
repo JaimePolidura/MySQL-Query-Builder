@@ -1,8 +1,9 @@
-package es.jaimetruman.delete.delete;
+package es.jaimetruman.delete;
 
 import es.jaimetruman.Utils;
+import es.jaimetruman.CanBuildQuery;
 
-public final class DeleteOptionsFull extends Delete{
+public final class DeleteOptionsFull extends Delete implements CanBuildQuery {
     private final StringBuilder builder;
 
     public DeleteOptionsFull(StringBuilder builder, String... toAppend) {
@@ -19,6 +20,7 @@ public final class DeleteOptionsFull extends Delete{
         return new DeleteOptionsCompare(builder, "OR ", field, " ");
     }
 
+    @Override
     public String build () {
         return builder.toString();
     }
