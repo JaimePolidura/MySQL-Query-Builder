@@ -1,5 +1,6 @@
 package es.jaimetruman.insert;
 
+import es.jaimetruman.operations.insert.Insert;
 import org.junit.Assert;
 import org.junit.Test;
 

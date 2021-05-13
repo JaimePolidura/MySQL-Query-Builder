@@ -1,5 +1,6 @@
 package es.jaimetruman.update;
 
+import es.jaimetruman.operations.update.Update;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,12 +9,14 @@ public final class UpdateTest {
     public void testUpdate () {
         String query = Update
                 .table("jugadores")
-                    .set("dinero", 10)
-                    .andSet("npagos", 1)
+                .set("dinero", 10)
+                .andSet("npagos", 1)
                 .where("nombre")
-                    .equal("jaimetruman")
+                .equal("jaimetruman")
+                .and("dinero")
+                .biggerOrEqual(10)
                 .build();
 
-        Assert.assertEquals(query, "UPDATE jugadores SET dinero = 10 , npagos = 1 WHERE nombre = 'jaimetruman' ");
+        Assert.assertEquals(query, "UPDATE jugadores SET dinero = 10 , npagos = 1 WHERE nombre = 'jaimetruman' AND dinero >= 10");
     }
 }
