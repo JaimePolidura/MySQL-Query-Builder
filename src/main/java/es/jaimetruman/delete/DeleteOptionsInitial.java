@@ -12,7 +12,7 @@ public final class DeleteOptionsInitial extends Delete implements CanBuildQuery 
     }
 
     public DeleteOptionsCompare where (String field) {
-        return new DeleteOptionsCompare(builder, "WHERE ", field, " ");
+        return new DeleteOptionsCompare(build(), "WHERE ", field, " ");
     }
 
     @Override

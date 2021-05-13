@@ -1,7 +1,7 @@
 package es.jaimetruman.insert;
 
-import es.jaimetruman.Utils;
 import es.jaimetruman.CanBuildQuery;
+import es.jaimetruman.Utils;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

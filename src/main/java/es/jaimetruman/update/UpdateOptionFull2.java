@@ -1,14 +1,15 @@
 package es.jaimetruman.update;
 
 
-import es.jaimetruman.Utils;
 import es.jaimetruman.CanBuildQuery;
+import es.jaimetruman.Utils;
 
 public final class UpdateOptionFull2 extends Update implements CanBuildQuery {
     private final StringBuilder builder;
 
-    public UpdateOptionFull2(StringBuilder builder, String... toAppend) {
-        this.builder = builder;
+    public UpdateOptionFull2(String query, String... toAppend) {
+        this.builder = new StringBuilder();
+        this.builder.append(query);
 
         builder.append(Utils.buildString(toAppend));
     }
@@ -22,12 +23,12 @@ public final class UpdateOptionFull2 extends Update implements CanBuildQuery {
     }
 
     @Override
-    public String build () {
+    public String build() {
         return builder.toString();
     }
 
     @Override
     public String toString () {
-        return this.builder.toString();
+        return build();
     }
 }

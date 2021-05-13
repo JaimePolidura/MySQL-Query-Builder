@@ -1,6 +1,5 @@
 package es.jaimetruman.insert;
 
-
 import es.jaimetruman.WriteQuery;
 
 public abstract class Insert implements WriteQuery {

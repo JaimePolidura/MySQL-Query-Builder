@@ -1,7 +1,7 @@
 package es.jaimetruman.select;
 
-import es.jaimetruman.Utils;
 import es.jaimetruman.CanBuildQuery;
+import es.jaimetruman.Utils;
 
 public final class SelectOptionFull extends Select implements CanBuildQuery {
     private final StringBuilder builder;

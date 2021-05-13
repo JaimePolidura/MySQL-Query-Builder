@@ -1,36 +1,35 @@
 package es.jaimetruman.delete;
 
 import es.jaimetruman.Utils;
-import es.jaimetruman.update.UpdateOptionFull2;
 
 import static es.jaimetruman.Utils.formatValue;
 
 public final class DeleteOptionsCompare extends Delete {
     private final StringBuilder builder;
 
-    public DeleteOptionsCompare(StringBuilder builder, String... toAppend) {
-        this.builder = builder;
+    public DeleteOptionsCompare(String query, String... toAppend) {
+        this.builder = new StringBuilder(query);
 
         this.builder.append(Utils.buildString(toAppend));
     }
 
-    public UpdateOptionFull2 equal (Object value) {
-        return new UpdateOptionFull2(builder, "= ", formatValue(value), " ");
+    public DeleteOptionsFull equal (Object value) {
+        return new DeleteOptionsFull(builder.toString(), "= ", formatValue(value), " ");
     }
 
-    public UpdateOptionFull2 bigger(Object value) {
-        return new UpdateOptionFull2(builder, "> ", formatValue(value), " ");
+    public DeleteOptionsFull bigger(Object value) {
+        return new DeleteOptionsFull(builder.toString(), "> ", formatValue(value), " ");
     }
 
-    public UpdateOptionFull2 smaller(Object value) {
-        return new UpdateOptionFull2(builder, "< ", formatValue(value), " ");
+    public DeleteOptionsFull smaller(Object value) {
+        return new DeleteOptionsFull(builder.toString(), "< ", formatValue(value), " ");
     }
 
-    public UpdateOptionFull2 smallerOrEqual (Object value) {
-        return new UpdateOptionFull2(builder, "<= ", formatValue(value), " ");
+    public DeleteOptionsFull smallerOrEqual (Object value) {
+        return new DeleteOptionsFull(builder.toString(), "<= ", formatValue(value), " ");
     }
 
-    public UpdateOptionFull2 biggerOrEqual(Object value) {
-        return new UpdateOptionFull2(builder, ">= ", formatValue(value), " ");
+    public DeleteOptionsFull biggerOrEqual(Object value) {
+        return new DeleteOptionsFull(builder.toString(), ">= ", formatValue(value), " ");
     }
 }

@@ -1,6 +1,5 @@
 package es.jaimetruman;
 
-
 public final class Utils {
     private Utils () {}
 
