@@ -5,6 +5,7 @@ This library provides a way to create mysql queries without with objects, withou
 
 For every method (where, order etc), it will create a new object. This means that this library provide inmutability so you can reuse a query as many times you want
 
+
 ### SELECT 
 
 ```sql
@@ -17,6 +18,7 @@ String query = Select.from("players")
           .limit(3)
           .build();
 ```
+
 
 
 ### INSERT
@@ -32,6 +34,7 @@ String query = Insert.table("players")
 ```
 
 
+
 ### UPDATE
 
 ```sql
@@ -44,6 +47,7 @@ String query = Update.table("players")
           .where("name").equal("jaimetruman")
           .build();
 ```
+
 
 
 ### DELETE
