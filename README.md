@@ -18,6 +18,7 @@ String query = Select.from("players")
           .build();
 ```
 
+
 ### INSERT
 
 ```sql
@@ -29,6 +30,7 @@ String query = Insert.table("players")
           .values("jaimetruman", 100)
           .build();
 ```
+
 
 ### UPDATE
 
@@ -42,6 +44,7 @@ String query = Update.table("players")
           .where("name").equal("jaimetruman")
           .build();
 ```
+
 
 ### DELETE
 
