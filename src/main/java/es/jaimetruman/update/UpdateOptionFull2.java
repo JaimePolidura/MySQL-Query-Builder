@@ -15,11 +15,11 @@ public final class UpdateOptionFull2 extends Update implements CanBuildQuery {
     }
 
     public UpdateOptionCompare and (String value) {
-        return new UpdateOptionCompare(builder, "AND ", value);
+        return new UpdateOptionCompare(builder.toString(), "AND ", value);
     }
 
     public UpdateOptionCompare or (String value) {
-        return new UpdateOptionCompare(builder, "OR ", value);
+        return new UpdateOptionCompare(builder.toString(), "OR ", value);
     }
 
     @Override

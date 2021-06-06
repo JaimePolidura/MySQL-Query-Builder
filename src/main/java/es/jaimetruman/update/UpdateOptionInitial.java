@@ -13,6 +13,6 @@ public final class UpdateOptionInitial extends Update{
     }
 
     public UpdateOptionFull1 set (String field, Object value) {
-        return new UpdateOptionFull1(builder, "SET ", field, " = ", Utils.formatValue(value));
+        return new UpdateOptionFull1(builder.toString(), "SET ", field, " = ", Utils.formatValue(value));
     }
 }

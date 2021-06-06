@@ -7,8 +7,8 @@ import static es.jaimetruman.Utils.formatValue;
 public final class UpdateOptionCompare extends Update{
     private final StringBuilder builder;
 
-    public UpdateOptionCompare(StringBuilder builder, String... toAppend) {
-        this.builder = builder;
+    public UpdateOptionCompare(String string, String... toAppend) {
+        this.builder = new StringBuilder(string);
 
         this.builder.append(Utils.buildString(toAppend))
                 .append(" ");

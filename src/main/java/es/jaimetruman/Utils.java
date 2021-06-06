@@ -18,11 +18,10 @@ public final class Utils {
 
         if(value instanceof String){
             formatted = "'" + value.toString() + "'";
-
-        }else if (value instanceof Boolean){
-            formatted = (Boolean) value ?
-                    "1" :
-                    "0";
+        }else if (value instanceof Boolean) {
+            formatted = (Boolean) value ? "1" : "0";
+        }else if(value instanceof Enum){
+            formatted = "'" + value.toString()+  "'";
         }else{
             formatted = value.toString();
         }

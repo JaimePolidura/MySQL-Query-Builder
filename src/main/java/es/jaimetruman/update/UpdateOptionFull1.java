@@ -7,17 +7,17 @@ import static es.jaimetruman.Utils.formatValue;
 public class UpdateOptionFull1 extends Update{
     protected final StringBuilder builder;
 
-    public UpdateOptionFull1(StringBuilder builder, String... toAppend) {
-        this.builder = builder;
+    public UpdateOptionFull1(String string, String... toAppend) {
+        this.builder = new StringBuilder(string);
 
         builder.append(Utils.buildString(toAppend)).append(" ");
     }
 
     public UpdateOptionFull1 andSet (String field, Object value) {
-        return new UpdateOptionFull1(builder, ", ", field, " = ", formatValue(value));
+        return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", formatValue(value));
     }
 
     public UpdateOptionCompare where (String value) {
-        return new UpdateOptionCompare(builder, "WHERE ", value);
+        return new UpdateOptionCompare(builder.toString(), "WHERE ", value);
     }
 }
