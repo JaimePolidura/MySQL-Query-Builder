@@ -9,8 +9,8 @@ For every method (where, order etc), it will create a new object. This means tha
 ```xml
 <repositories>
     <repository>
-         <id>jitpack.io</id>
-         <url>https://jitpack.io</url>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
     </repository>
 </repositories>
 
