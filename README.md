@@ -5,6 +5,23 @@ This library provides a way to create mysql queries without with objects, withou
 
 For every method (where, order etc), it will create a new object. This means that this library provide inmutability so you can reuse a query as many times you want
 
+# Set up
+```xml
+<repositories>
+    <repository>
+         <id>jitpack.io</id>
+         <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.JaimeTruman</groupId>
+    <artifactId>MySQL-Query-Builder</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+
 
 ### SELECT 
 
