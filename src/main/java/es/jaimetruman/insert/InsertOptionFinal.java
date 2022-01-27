@@ -14,13 +14,14 @@ public final class InsertOptionFinal extends Insert implements CanBuildQuery {
     }
 
     public String values (Object... values) {
-        this.builder.append(
-                        Stream.of(values)
+        StringBuilder newStringBuilder = new StringBuilder(this.builder);
+
+        newStringBuilder.append(Stream.of(values)
                         .map(Utils::formatValue)
                         .collect(Collectors.joining(", ")))
                 .append(")");
 
-        return builder.toString();
+        return newStringBuilder.toString();
     }
 
     @Override
