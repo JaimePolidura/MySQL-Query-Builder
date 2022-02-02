@@ -17,7 +17,7 @@ For every method (where, order etc), it will create a new object. This means tha
 <dependency>
     <groupId>com.github.JaimeTruman</groupId>
     <artifactId>MySQL-Query-Builder</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
