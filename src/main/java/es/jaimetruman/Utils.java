@@ -16,7 +16,7 @@ public final class Utils {
     public static String formatValue (Object value) {
         String formatted;
 
-        if(value instanceof String){
+        if(value instanceof String || value instanceof UUID){
             formatted = "'" + value.toString() + "'";
         }else if (value instanceof Boolean) {
             formatted = (Boolean) value ? "1" : "0";
