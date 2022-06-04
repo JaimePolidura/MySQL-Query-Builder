@@ -1,5 +1,7 @@
 package es.jaimetruman;
 
+import java.util.*;
+
 public final class Utils {
     private Utils () {}
 
