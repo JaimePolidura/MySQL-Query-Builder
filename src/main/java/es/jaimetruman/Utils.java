@@ -24,6 +24,8 @@ public final class Utils {
             formatted = (Boolean) value ? "1" : "0";
         }else if(value instanceof Enum){
             formatted = "'" + value.toString()+  "'";
+        }else if(value instanceof Collection){
+            formatted = "'" + value.toString() + "'";
         }else{
             formatted = value.toString();
         }
