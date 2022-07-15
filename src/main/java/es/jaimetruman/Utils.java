@@ -19,7 +19,7 @@ public final class Utils {
         String formatted;
 
         if(value == null){
-            return null;
+            return "null";
         }else if(value instanceof String || value instanceof UUID){
             formatted = "'" + value.toString() + "'";
         }else if (value instanceof Boolean) {
