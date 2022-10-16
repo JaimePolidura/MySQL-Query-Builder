@@ -1,10 +1,3 @@
-# MySQL query builder
-
-
-This library provides a way to create mysql queries without with objects, without wrinting any "string". 
-
-For every method (where, order etc), it will create a new object. This means that this library provide inmutability so you can reuse a query as many times you want
-
 # Set up
 ```xml
 <repositories>
