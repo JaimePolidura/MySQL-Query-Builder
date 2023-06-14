@@ -13,22 +13,22 @@ public final class SelectOptionCompare extends Select {
     }
 
     public SelectOptionFull equal (Object value) {
-        return new SelectOptionFull(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new SelectOptionFull(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public SelectOptionFull bigger(Object value) {
-        return new SelectOptionFull(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new SelectOptionFull(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public SelectOptionFull smaller(Object value) {
-        return new SelectOptionFull(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new SelectOptionFull(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public SelectOptionFull smallerOrEqual (Object value) {
-        return new SelectOptionFull(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new SelectOptionFull(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public SelectOptionFull biggerOrEqual(Object value) {
-        return new SelectOptionFull(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new SelectOptionFull(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 }

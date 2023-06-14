@@ -13,22 +13,22 @@ public final class DeleteOptionsCompare extends Delete {
     }
 
     public DeleteOptionsFull equal (Object value) {
-        return new DeleteOptionsFull(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new DeleteOptionsFull(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public DeleteOptionsFull bigger(Object value) {
-        return new DeleteOptionsFull(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new DeleteOptionsFull(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public DeleteOptionsFull smaller(Object value) {
-        return new DeleteOptionsFull(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new DeleteOptionsFull(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public DeleteOptionsFull smallerOrEqual (Object value) {
-        return new DeleteOptionsFull(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new DeleteOptionsFull(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public DeleteOptionsFull biggerOrEqual(Object value) {
-        return new DeleteOptionsFull(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new DeleteOptionsFull(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 }

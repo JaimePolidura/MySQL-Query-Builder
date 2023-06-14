@@ -13,7 +13,7 @@ public class UpdateOptionFull1 extends Update{
     }
 
     public UpdateOptionFull1 andSet (String field, Object value) {
-        return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
+        return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 
     public UpdateOptionCompare where (String value) {

@@ -12,5 +12,4 @@ public final class InsertTest {
 
         Assert.assertEquals(query, "INSERT INTO jugadores (nombre, dinero) VALUES ('JaimeTruman', 10)");
     }
-
 }

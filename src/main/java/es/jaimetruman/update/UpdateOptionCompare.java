@@ -14,23 +14,23 @@ public final class UpdateOptionCompare extends Update{
     }
 
     public UpdateOptionFull2 equal (Object value) {
-        return new UpdateOptionFull2(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
+        return new UpdateOptionFull2(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value), " ");
     }
 
     public UpdateOptionFull2 bigger(Object value) {
-        return new UpdateOptionFull2(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
+        return new UpdateOptionFull2(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 
     public UpdateOptionFull2 smaller(Object value) {
-        return new UpdateOptionFull2(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
+        return new UpdateOptionFull2(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 
     public UpdateOptionFull2 smallerOrEqual (Object value) {
-        return new UpdateOptionFull2(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
+        return new UpdateOptionFull2(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 
     public UpdateOptionFull2 biggerOrEqual(Object value) {
-        return new UpdateOptionFull2(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
+        return new UpdateOptionFull2(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 
 }

@@ -10,6 +10,6 @@ public final class DeleteTest {
                 .where("nombre").equal("jaimetruman")
                 .build();
 
-        Assert.assertEquals(query, "DELETE FROM jugadores WHERE nombre = 'jaimetruman' ");
+        Assert.assertEquals("DELETE FROM jugadores WHERE nombre = 'jaimetruman' ", query);
     }
 }

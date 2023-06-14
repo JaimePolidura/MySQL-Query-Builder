@@ -18,7 +18,7 @@ public final class InsertOptionFinal extends Insert implements CanBuildQuery {
         StringBuilder newStringBuilder = new StringBuilder(this.builder);
 
         newStringBuilder.append(Stream.of(values)
-                        .map(value -> MySQLQueryBuilder.getDatabaseTypeMapper().map(value))
+                        .map(value -> MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value))
                         .collect(Collectors.joining(", ")))
                 .append(")");
 
