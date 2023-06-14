@@ -1,7 +1,5 @@
 package es.jaimetruman;
 
-import java.util.*;
-
 public final class Utils {
     private Utils () {}
 
@@ -13,25 +11,5 @@ public final class Utils {
         }
 
         return builder.toString();
-    }
-
-    public static String formatValue (Object value) {
-        String formatted;
-
-        if(value == null){
-            return "null";
-        }else if(value instanceof String || value instanceof UUID){
-            formatted = "'" + value.toString() + "'";
-        }else if (value instanceof Boolean) {
-            formatted = (Boolean) value ? "1" : "0";
-        }else if(value instanceof Enum){
-            formatted = "'" + value.toString()+  "'";
-        }else if(value instanceof Collection){
-            formatted = "'" + value.toString() + "'";
-        }else{
-            formatted = value.toString();
-        }
-
-        return formatted;
     }
 }

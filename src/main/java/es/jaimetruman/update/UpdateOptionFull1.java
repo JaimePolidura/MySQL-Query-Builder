@@ -1,8 +1,7 @@
 package es.jaimetruman.update;
 
+import es.jaimetruman.MySQLQueryBuilder;
 import es.jaimetruman.Utils;
-
-import static es.jaimetruman.Utils.formatValue;
 
 public class UpdateOptionFull1 extends Update{
     protected final StringBuilder builder;
@@ -14,7 +13,7 @@ public class UpdateOptionFull1 extends Update{
     }
 
     public UpdateOptionFull1 andSet (String field, Object value) {
-        return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", formatValue(value));
+        return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
     }
 
     public UpdateOptionCompare where (String value) {

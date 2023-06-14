@@ -1,8 +1,7 @@
 package es.jaimetruman.update;
 
+import es.jaimetruman.MySQLQueryBuilder;
 import es.jaimetruman.Utils;
-
-import static es.jaimetruman.Utils.formatValue;
 
 public final class UpdateOptionCompare extends Update{
     private final StringBuilder builder;
@@ -15,23 +14,23 @@ public final class UpdateOptionCompare extends Update{
     }
 
     public UpdateOptionFull2 equal (Object value) {
-        return new UpdateOptionFull2(builder.toString(), "= ", formatValue(value), " ");
+        return new UpdateOptionFull2(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 
     public UpdateOptionFull2 bigger(Object value) {
-        return new UpdateOptionFull2(builder.toString(), "> ", formatValue(value));
+        return new UpdateOptionFull2(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
     }
 
     public UpdateOptionFull2 smaller(Object value) {
-        return new UpdateOptionFull2(builder.toString(), "< ", formatValue(value));
+        return new UpdateOptionFull2(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
     }
 
     public UpdateOptionFull2 smallerOrEqual (Object value) {
-        return new UpdateOptionFull2(builder.toString(), "<= ", formatValue(value));
+        return new UpdateOptionFull2(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
     }
 
     public UpdateOptionFull2 biggerOrEqual(Object value) {
-        return new UpdateOptionFull2(builder.toString(), ">= ", formatValue(value));
+        return new UpdateOptionFull2(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value));
     }
 
 }

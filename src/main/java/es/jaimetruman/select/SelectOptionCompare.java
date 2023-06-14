@@ -1,8 +1,7 @@
 package es.jaimetruman.select;
 
+import es.jaimetruman.MySQLQueryBuilder;
 import es.jaimetruman.Utils;
-
-import static es.jaimetruman.Utils.formatValue;
 
 public final class SelectOptionCompare extends Select {
     private final StringBuilder builder;
@@ -14,22 +13,22 @@ public final class SelectOptionCompare extends Select {
     }
 
     public SelectOptionFull equal (Object value) {
-        return new SelectOptionFull(builder.toString(), "= ", formatValue(value), " ");
+        return new SelectOptionFull(builder.toString(), "= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 
     public SelectOptionFull bigger(Object value) {
-        return new SelectOptionFull(builder.toString(), "> ", formatValue(value), " ");
+        return new SelectOptionFull(builder.toString(), "> ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 
     public SelectOptionFull smaller(Object value) {
-        return new SelectOptionFull(builder.toString(), "< ", formatValue(value), " ");
+        return new SelectOptionFull(builder.toString(), "< ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 
     public SelectOptionFull smallerOrEqual (Object value) {
-        return new SelectOptionFull(builder.toString(), "<= ", formatValue(value), " ");
+        return new SelectOptionFull(builder.toString(), "<= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 
     public SelectOptionFull biggerOrEqual(Object value) {
-        return new SelectOptionFull(builder.toString(), ">= ", formatValue(value), " ");
+        return new SelectOptionFull(builder.toString(), ">= ", MySQLQueryBuilder.getDatabaseTypeMapper().map(value), " ");
     }
 }

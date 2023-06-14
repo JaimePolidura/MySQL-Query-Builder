@@ -1,6 +1,7 @@
 package es.jaimetruman.insert;
 
 import es.jaimetruman.CanBuildQuery;
+import es.jaimetruman.MySQLQueryBuilder;
 import es.jaimetruman.Utils;
 
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ public final class InsertOptionFinal extends Insert implements CanBuildQuery {
         StringBuilder newStringBuilder = new StringBuilder(this.builder);
 
         newStringBuilder.append(Stream.of(values)
-                        .map(Utils::formatValue)
+                        .map(value -> MySQLQueryBuilder.getDatabaseTypeMapper().map(value))
                         .collect(Collectors.joining(", ")))
                 .append(")");
 
