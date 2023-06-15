@@ -10,6 +10,6 @@ public final class LocalDateTimeSerializer implements DatabaseTypeSerializer<Loc
 
     @Override
     public String serialize(LocalDateTime localDateTime) {
-        return localDateTime.format(formatter);
+        return String.format("'%s'", localDateTime.format(formatter));
     }
 }
