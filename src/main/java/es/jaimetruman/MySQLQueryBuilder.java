@@ -19,6 +19,11 @@ public final class MySQLQueryBuilder {
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer());
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(String.class, new StringSerializer());
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(UUID.class, new UUIDSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Integer.class, new IntegerSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Double.class, new DoubleSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Short.class, new ShortSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Long.class, new LongSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Float.class, new FloatSerializer());
     }
 
     public static <T> void addCustomSerializer(Class<? extends T> type, DatabaseTypeSerializer<T> serializer) {

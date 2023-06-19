@@ -1,6 +1,8 @@
 package es.jaimetruman.insert;
 
 
+import java.util.List;
+
 public final class InsertOptionInitial extends Insert {
     private final StringBuilder builder;
 

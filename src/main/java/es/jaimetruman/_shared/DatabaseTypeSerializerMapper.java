@@ -3,6 +3,7 @@ package es.jaimetruman._shared;
 import es.jaime.javaddd.domain.database.DatabaseTypeSerializer;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class DatabaseTypeSerializerMapper {
@@ -16,15 +17,31 @@ public final class DatabaseTypeSerializerMapper {
         this.mappings.put(type, serializer);
     }
 
-    public <T> String serialize(T t) {
-        if(t == null){
+    public <T> String serialize(T toSerialize) {
+        if(toSerialize == null){
             return "";
         }
-        if(!mappings.containsKey(t.getClass())){
-            return t.toString();
+
+        Optional<DatabaseTypeSerializer> typeSerializerOptional = findTypeSerializer(toSerialize.getClass());
+        if(!typeSerializerOptional.isPresent()){
+            return String.format("'%s'", toSerialize);
         }
 
-        return this.mappings.get(t.getClass())
-                .serialize(t);
+        return typeSerializerOptional.get()
+                .serialize(toSerialize);
+    }
+
+    private Optional<DatabaseTypeSerializer> findTypeSerializer(Class<?> clazz) {
+        Class<?> actual = clazz;
+
+        while (actual != Object.class) {
+            if(mappings.containsKey(actual)){
+                return Optional.of(mappings.get(actual));
+            }
+
+            actual = clazz.getSuperclass();
+        }
+
+        return Optional.empty();
     }
 }
