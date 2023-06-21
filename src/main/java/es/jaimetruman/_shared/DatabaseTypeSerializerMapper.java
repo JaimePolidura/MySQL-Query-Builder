@@ -33,13 +33,13 @@ public final class DatabaseTypeSerializerMapper {
 
     private Optional<DatabaseTypeSerializer> findTypeSerializer(Class<?> clazz) {
         Class<?> actual = clazz;
-
+        
         while (actual != Object.class) {
             if(mappings.containsKey(actual)){
                 return Optional.of(mappings.get(actual));
             }
 
-            actual = clazz.getSuperclass();
+            actual = actual.getSuperclass();
         }
 
         return Optional.empty();
