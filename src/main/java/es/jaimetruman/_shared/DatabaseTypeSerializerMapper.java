@@ -19,7 +19,7 @@ public final class DatabaseTypeSerializerMapper {
 
     public <T> String serialize(T toSerialize) {
         if(toSerialize == null){
-            return "";
+            return "''";
         }
 
         Optional<DatabaseTypeSerializer> typeSerializerOptional = findTypeSerializer(toSerialize.getClass());
@@ -33,7 +33,7 @@ public final class DatabaseTypeSerializerMapper {
 
     private Optional<DatabaseTypeSerializer> findTypeSerializer(Class<?> clazz) {
         Class<?> actual = clazz;
-        
+
         while (actual != Object.class) {
             if(mappings.containsKey(actual)){
                 return Optional.of(mappings.get(actual));
