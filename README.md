@@ -66,3 +66,30 @@ String query = Delete.from("players")
           .or("money").biggerOrEqual(100)
           .build();
 ```
+
+### CustomSerializer
+
+```sql
+INSERT INTO users_json (json) VALUES ("{'name': 'Jaime', 'creationTime': 10}")
+```
+```java
+MySQLQueryBuilder.addCustomSerializer(User.class, new UserSerializer());
+
+Insert.table("users_json")         
+        .fields("json")
+        .values(new User("Jaime", 10));
+
+public class UserSerializer implements DatabaseTypeSerializer<User> {
+    @Override
+    public String serialize(User user) {
+        return String.format("\"{'name': '%s', 'creationTime': %s}\"", user.username, user.creationTime);
+    } 
+}
+
+@AllArgsConstructor
+public class User {
+    String username;
+    long creationTime;
+}
+
+```

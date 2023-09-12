@@ -2,7 +2,6 @@ package es.jaimetruman.update;
 
 import es.jaimetruman.MySQLQueryBuilder;
 import es.jaimetruman.Utils;
-import es.jaimetruman.select.SelectOptionFull;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
