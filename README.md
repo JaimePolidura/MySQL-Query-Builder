@@ -1,3 +1,4 @@
+Java library that helps you to create SQL queries using Java objects instead of using raw text.
 # Set up
 ```xml
 <repositories>
