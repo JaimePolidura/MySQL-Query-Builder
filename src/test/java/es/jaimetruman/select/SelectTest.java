@@ -26,6 +26,10 @@ public final class SelectTest {
 
     @Test
     public void testSelect3() {
+        Select.from()
+                .where()
+                .
+
         String query = Select.from("jugadores").where("nombre")
                 .isNull()
                 .and("onilne")
@@ -42,5 +46,16 @@ public final class SelectTest {
                 .toString();
 
         Assert.assertEquals(query, "SELECT * FROM jugadores WHERE nombre IN ('JaimeTruman', 'MOLONXX7', 'walo002') ");
+    }
+
+    @Test
+    public void testSelect5() {
+        String query = Select.columns("nombre", "dinero")
+                .from("pesonas")
+                .orderBy("dinero", Order.ASC)
+                .limit(10)
+                .build();
+
+        Assert.assertEquals(query, "SELECT nombre, dinero FROM pesonas ORDER BY dinero ASC LIMIT 10 ");
     }
 }

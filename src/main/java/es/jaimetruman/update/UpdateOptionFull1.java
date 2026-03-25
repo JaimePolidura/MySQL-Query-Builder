@@ -12,7 +12,7 @@ public class UpdateOptionFull1 extends Update{
         builder.append(Utils.buildString(toAppend)).append(" ");
     }
 
-    public UpdateOptionFull1 andSet (String field, Object value) {
+    public UpdateOptionFull1 andSet(String field, Object value) {
         return new UpdateOptionFull1(builder.toString(), ", ", field, " = ", MySQLQueryBuilder.getDatabaseTypeSerializerMapper().serialize(value));
     }
 

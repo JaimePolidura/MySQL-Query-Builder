@@ -6,10 +6,6 @@ import lombok.AllArgsConstructor;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-/**
- *      COMP   CONC
- */
-
 class Main {
     public static void main(String[] args) {
         Test<Integer> test = new Test<>();
@@ -47,7 +43,6 @@ interface Step<COMP extends ComparationStep, CONC extends ConcatenationStep> {
     COMP comparationStep(StringBuilder stringBuilder);
 
     CONC concatenationStep(StringBuilder stringBuilder);
-
 
     default String build() {
         return builder().toString();
@@ -170,56 +165,3 @@ class SelectCompartionStep implements ComparationStep<SelectCompartionStep, Sele
         return new SelectConcatenationStep(stringBuilder);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

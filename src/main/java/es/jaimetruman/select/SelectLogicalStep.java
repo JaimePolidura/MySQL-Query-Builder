@@ -3,21 +3,20 @@ package es.jaimetruman.select;
 import es.jaimetruman.CanBuildQuery;
 import es.jaimetruman.Utils;
 
-public final class SelectOptionFull extends SelectOptionInitial implements CanBuildQuery {
+public final class SelectLogicalStep extends SelectInitialStep implements CanBuildQuery {
     private final StringBuilder builder;
 
-    public SelectOptionFull(String query, String... toAppend) {
+    public SelectLogicalStep(String query, String... toAppend) {
         this.builder = new StringBuilder();
-
         this.builder.append(query).append(Utils.buildString(toAppend));
     }
 
-    public SelectOptionCompare and (String value) {
-        return new SelectOptionCompare(build(), "AND ", value, " ");
+    public SelectComparationStep and(String value) {
+        return new SelectComparationStep(build(), "AND ", value, " ");
     }
 
-    public SelectOptionCompare or (String value) {
-        return new SelectOptionCompare(build(), "OR ", value, " ");
+    public SelectComparationStep or(String value) {
+        return new SelectComparationStep(build(), "OR ", value, " ");
     }
 
     @Override

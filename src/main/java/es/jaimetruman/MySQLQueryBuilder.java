@@ -6,6 +6,7 @@ import es.jaimetruman._shared.serializers.*;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Date;
 import java.util.UUID;
 
 public final class MySQLQueryBuilder {
@@ -24,6 +25,7 @@ public final class MySQLQueryBuilder {
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Short.class, new ShortSerializer());
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Long.class, new LongSerializer());
         DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Float.class, new FloatSerializer());
+        DATABASE_TYPE_SERIALIZER_MAPPER.addSerializer(Date.class, new DateSerializer());
     }
 
     public static <T> void addCustomSerializer(Class<? extends T> type, DatabaseTypeSerializer<T> serializer) {
