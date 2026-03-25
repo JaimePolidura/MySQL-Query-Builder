@@ -10,6 +10,6 @@ public class DateSerializer implements DatabaseTypeSerializer<Date> {
 
     @Override
     public String serialize(Date date) {
-        return date == null ? "0000-00-00 00:00:00" : String.format("'%s'", FORMATTER.format(date));
+        return date == null ? null : String.format("'%s'", FORMATTER.format(date));
     }
 }
