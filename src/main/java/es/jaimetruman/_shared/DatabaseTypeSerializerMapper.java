@@ -19,7 +19,7 @@ public final class DatabaseTypeSerializerMapper {
 
     public <T> String serialize(T toSerialize) {
         if(toSerialize == null){
-            return "''";
+            return "NULL";
         }
 
         Optional<DatabaseTypeSerializer> typeSerializerOptional = findTypeSerializer(toSerialize.getClass());
