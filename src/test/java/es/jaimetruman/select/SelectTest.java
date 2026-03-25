@@ -26,9 +26,6 @@ public final class SelectTest {
 
     @Test
     public void testSelect3() {
-        Select.from()
-                .where()
-                .
 
         String query = Select.from("jugadores").where("nombre")
                 .isNull()
